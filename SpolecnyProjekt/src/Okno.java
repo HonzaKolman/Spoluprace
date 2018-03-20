@@ -13,7 +13,7 @@ public class Okno extends JFrame{
 	public Okno() {
 		this.setTitle("XOR šifra");
 		this.setResizable(false);
-		this.setSize(250, 250);
+		this.setSize(500, 250);
 		this.setLayout(new FlowLayout());
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		label = new JLabel("Zadej cestu: ");
