@@ -1,7 +1,11 @@
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -16,9 +20,7 @@ public class Okno extends JFrame{
 	private JTextField field;
 	private JButton but;
 	private JTextArea area;
-	private String cesta;
 
-	
 	public Okno() {
 		this.setTitle("XOR šifra");
 		this.setResizable(false);
@@ -27,42 +29,35 @@ public class Okno extends JFrame{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		label = new JLabel("Zadej cestu: ");
 		this.add(label);
-		field = new JTextField(cesta, 40);
+		field = new JTextField(40);
 		this.add(field);
 		but = new JButton("Zašifrovat");
 		this.add(but);
-		area = new JTextArea(15, 50);
+		but.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String text = field.getText();
+				try {
+					BufferedReader br = new BufferedReader(new FileReader(text));
+					String radek = "";
+					ArrayList<String> l = new ArrayList<>();
+						while((radek=br.readLine())!=null) {
+							l.add(radek);
+						}	
+						br.close();
+						
+						System.out.println(l);
+
+				} catch (FileNotFoundException e1) {
+					System.out.println("Soubor nenalezen.");
+					e1.printStackTrace();
+				}catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+		area = new JTextArea(15, 30);
 		this.add(area);
 		this.setVisible(true);
-	}
-
-	public void setCesta()throws Exception {
-		if(cesta.length()==0) {
-			throw new Exception("Cesta nesmí býtprázdná!");
-		}else {
-			this.cesta = cesta;
-		}
-	}
-
-	
-	public void ctiSoubor(String cesta) {
-		try {
-			BufferedReader br = new BufferedReader(new FileReader(cesta));
-			String radek = "";
-			ArrayList<String> l = new ArrayList<>();
-			
-				while((radek=br.readLine())!=null) {
-					l.add(radek);
-				}	
-				br.close();
-				System.out.println(l);
-			
-		} catch (FileNotFoundException e) {
-			System.out.println("Soubor nenalezen.");
-			e.printStackTrace();
-		}catch (IOException e) {
-				
-			e.printStackTrace();
-		}
 	}
 }
