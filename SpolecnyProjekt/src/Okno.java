@@ -18,7 +18,7 @@ public class Okno extends JFrame{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		label = new JLabel("Zadej cestu: ");
 		this.add(label);
-		field = new JTextField(50);
+		field = new JTextField(40);
 		this.add(field);
 		but = new JButton("Zašifrovat");
 		this.setVisible(true);
