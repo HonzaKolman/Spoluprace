@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,26 +18,27 @@ import javax.swing.JTextField;
 
 public class Okno extends JFrame{
 	private JLabel label;
-	private JTextField field;
+	private JTextField cesta;
 	private JButton but;
+	private JLabel text;
 	private JTextArea area;
 
 	public Okno() {
 		this.setTitle("XOR šifra");
 		this.setResizable(false);
-		this.setSize(600, 350);
+		this.setSize(650, 400);
 		this.setLayout(new FlowLayout());
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		label = new JLabel("Zadej cestu: ");
 		this.add(label);
-		field = new JTextField(40);
-		this.add(field);
-		but = new JButton("Zašifrovat");
+		cesta = new JTextField(40);
+		this.add(cesta);
+		but = new JButton("Naèti");
 		this.add(but);
 		but.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String text = field.getText();
+				String text = cesta.getText();
 				try {
 					BufferedReader br = new BufferedReader(new FileReader(text));
 					String radek = "";
@@ -56,7 +58,9 @@ public class Okno extends JFrame{
 				}
 			}
 		});
-		area = new JTextArea(15, 30);
+		text = new JLabel("Text ze souboru:");
+		this.add(text);
+		area = new JTextArea(15, 40);
 		this.add(area);
 		this.setVisible(true);
 	}
