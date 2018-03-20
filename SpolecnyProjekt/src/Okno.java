@@ -1,4 +1,9 @@
 import java.awt.FlowLayout;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,6 +16,7 @@ public class Okno extends JFrame{
 	private JTextField field;
 	private JButton but;
 	private JTextArea area;
+	String cesta;
 	
 	public Okno() {
 		this.setTitle("XOR šifra");
@@ -28,4 +34,26 @@ public class Okno extends JFrame{
 		this.add(area);
 		this.setVisible(true);
 	}
+	
+	public void ctiSoubor(String cesta) {
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(cesta));
+			String radek = "";
+			ArrayList<String> l = new ArrayList<>();
+			
+				while((radek=br.readLine())!=null) {
+					l.add(radek);
+				}	
+				br.close();
+				System.out.println(l);
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("Soubor nenalezen.");
+			e.printStackTrace();
+		}catch (IOException e) {
+				
+			e.printStackTrace();
+		}
+	}
+	
 }
