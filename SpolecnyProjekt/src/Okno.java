@@ -11,12 +11,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
 
 public class Okno extends JFrame{
 	private JLabel label;
@@ -31,6 +33,11 @@ public class Okno extends JFrame{
 	private JButton rozsifruj;
 	private JLabel labelSifra;
 	private JTextArea sifra;
+	private JPanel p1;
+	private JPanel p2;
+	private JPanel p3;
+	private JPanel p4;
+	private JPanel p5;
 
 	public Okno() {
 		this.setTitle("XOR šifra");
@@ -38,12 +45,13 @@ public class Okno extends JFrame{
 		this.setSize(650, 850);
 		this.setLayout(new FlowLayout());
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		p1 = new JPanel(new FlowLayout());
 		label = new JLabel("Zadej cestu: ");
-		this.add(label);
+		p1.add(label);
 		cesta = new JTextField(40);
-		this.add(cesta);
+		p1.add(cesta);
 		nacti = new JButton("Naèti");
-		this.add(nacti);
+		p1.add(nacti);
 		nacti.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -63,27 +71,37 @@ public class Okno extends JFrame{
 				}
 			}
 		});
+		p2 = new JPanel(new FlowLayout());
 		text = new JLabel("Text ze souboru:");
-		this.add(text);
+		p2.add(text);
 		area = new JTextArea(15, 45);
-		this.add(area);
+		p2.add(area);
 		area.setEditable(false);
+		area.setAutoscrolls(true);
+		p3= new JPanel(new FlowLayout());
 		labelKlic = new JLabel("Klíè:");
-		this.add(labelKlic);
+		p3.add(labelKlic);
 		klic = new JTextArea(15, 45);
-		this.add(klic);
+		p3.add(klic);
 		klic.setEditable(false);
 		generovat = new JButton("Generovat");
-		this.add(generovat);
+		p3.add(generovat);
+		p4 = new JPanel(new FlowLayout());
 		sifruj = new JButton("Šifruj");
-		this.add(sifruj);
+		p4.add(sifruj);
 		rozsifruj = new JButton("Rozšifruj\n");
-		this.add(rozsifruj);
+		p4.add(rozsifruj);
+		p5 = new JPanel(new FlowLayout());
 		labelSifra = new JLabel("Šifra:");
-		this.add(labelSifra);
+		p5.add(labelSifra);
 		sifra = new JTextArea(15, 40);
-		this.add(sifra);
+		p5.add(sifra);
 		sifra.setEditable(false);
 		this.setVisible(true);
+		this.add(p1);
+		this.add(p2);
+		this.add(p3);
+		this.add(p4);
+		this.add(p5);
 	}
 }
