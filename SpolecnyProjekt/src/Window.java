@@ -107,12 +107,18 @@ public class Window {
 		frmXorsifrakolmanstokr.getContentPane().add(textArea_2);
 		textArea_2.setEditable(false);
 		
-		JButton btnZaifrovat = new JButton("Za\u0161ifrovat");
-		btnZaifrovat.setBounds(337, 121, 101, 23);
-		frmXorsifrakolmanstokr.getContentPane().add(btnZaifrovat);
+		/**
+		 * Button,který zašifruje soubor
+		 */
+		JButton btnZasifrovat = new JButton("Zašifrovat");
+		btnZasifrovat.setBounds(337, 121, 101, 23);
+		frmXorsifrakolmanstokr.getContentPane().add(btnZasifrovat);
 		
-		JButton btnRozifrovat = new JButton("Roz\u0161ifrovat");
-		btnRozifrovat.setBounds(457, 121, 105, 23);
-		frmXorsifrakolmanstokr.getContentPane().add(btnRozifrovat);
+		/**
+		 * Button, který rozšifruje soubor
+		 */
+		JButton btnRozsifrovat = new JButton("Rozšifrovat");
+		btnRozsifrovat.setBounds(457, 121, 105, 23);
+		frmXorsifrakolmanstokr.getContentPane().add(btnRozsifrovat);
 	}
 }
