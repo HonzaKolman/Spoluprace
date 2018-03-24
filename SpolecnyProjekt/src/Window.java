@@ -170,8 +170,12 @@ public class Window {
 		            int c = (a.charAt(0) ^ b.charAt(i));
 		            System.out.printf("result is <%s> [%s]\n",
 		                    (char) c, Integer.toBinaryString(c));
+		           i++;
+		            	if(i == 10) {
+		            		i = 0;
+		            	}
+		            }
 				}
-			}
 				textArea_2.getText();
 			}
 		});
