@@ -74,8 +74,6 @@ public class Window {
 
 		textArea.setEditable(false);
 		textArea.setLineWrap(true);
-		textArea.setEditable(false);
-		textArea.setLineWrap(true);
 
 		textArea.setBorder(new LineBorder(new Color(0, 0, 0)));
 		textArea.setBounds(10, 36, 552, 130);
@@ -160,25 +158,28 @@ public class Window {
 
 		btnZasifrovat.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			
+			public void actionPerformed(ActionEvent e){
 				String a = textArea.getText();
 				String b = textArea_1.getText();
 				for(int i = 0; i < b.length(); i++) {
-					for(int x = 0; x < a.length(); x++) {
-					System.out.printf("xoring <%s> [%s] with <%s> [%s]\n",
+					for(int x = 0; x <= a.length(); x++) {
+						System.out.printf("xoring <%s> [%s] with <%s> [%s]\n",
 		                    a.charAt(x), Integer.toBinaryString(a.charAt(x)),
 		                    b.charAt(i), Integer.toBinaryString(b.charAt(i)));
-		            int c = (a.charAt(0) ^ b.charAt(i));
+						int c = (a.charAt(0) ^ b.charAt(i));
 		            System.out.printf("result is <%s> [%s]\n",
 		                    (char) c, Integer.toBinaryString(c));
-		           i++;
+		            	i++;
 		            	if(i == 10) {
 		            		i = 0;
 		            	}
+		            	
 		            }
 				}
 
 			}
+		
 		});
 	}
 }
