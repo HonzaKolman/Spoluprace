@@ -52,7 +52,7 @@ public class Window {
 	private void initialize() {
 		frmXorsifrakolmanstokr = new JFrame();
 		frmXorsifrakolmanstokr.setTitle("XOR Šifra-Kolman, Štokr");
-		frmXorsifrakolmanstokr.setBounds(100, 100, 588, 308);
+		frmXorsifrakolmanstokr.setBounds(100, 100, 588, 409);
 		frmXorsifrakolmanstokr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmXorsifrakolmanstokr.getContentPane().setLayout(null);
 		
@@ -72,12 +72,14 @@ public class Window {
 		 * Výpis ze souboru
 		 */
 		JTextArea textArea = new JTextArea();
-		textArea.setEditable(false);
 
+		textArea.setEditable(false);
+		textArea.setLineWrap(true);
+		textArea.setEditable(false);
 		textArea.setLineWrap(true);
 
 		textArea.setBorder(new LineBorder(new Color(0, 0, 0)));
-		textArea.setBounds(10, 36, 534, 74);
+		textArea.setBounds(10, 36, 552, 130);
 		frmXorsifrakolmanstokr.getContentPane().add(textArea);
 
 		
@@ -111,7 +113,7 @@ public class Window {
 		 * Button na vygenerování klíèe
 		 */
 		JButton btnKlic = new JButton("Klíè");
-		btnKlic.setBounds(10, 121, 82, 23);
+		btnKlic.setBounds(10, 177, 82, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(btnKlic);
 		
 		/**
@@ -119,12 +121,12 @@ public class Window {
 		 */
 		JTextArea textArea_1 = new JTextArea();
 		textArea_1.setBorder(new LineBorder(new Color(0, 0, 0)));
-		textArea_1.setBounds(102, 121, 225, 23);
+		textArea_1.setBounds(102, 177, 225, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(textArea_1);
 		textArea_1.setEditable(false);
 		
 		JLabel lblZasifrovanyText = new JLabel("Zašifrovaný text:");
-		lblZasifrovanyText.setBounds(10, 155, 105, 14);
+		lblZasifrovanyText.setBounds(10, 211, 105, 14);
 		frmXorsifrakolmanstokr.getContentPane().add(lblZasifrovanyText);
 		
 		/**
@@ -132,7 +134,7 @@ public class Window {
 		 */
 		JTextArea textArea_2 = new JTextArea();
 		textArea_2.setBorder(new LineBorder(new Color(0, 0, 0)));
-		textArea_2.setBounds(10, 180, 534, 74);
+		textArea_2.setBounds(10, 236, 552, 123);
 		frmXorsifrakolmanstokr.getContentPane().add(textArea_2);
 		textArea_2.setEditable(false);
 		
@@ -140,22 +142,16 @@ public class Window {
 		 * Button,který zašifruje soubor
 		 */
 		JButton btnZasifrovat = new JButton("Zašifrovat");
-		btnZasifrovat.setBounds(337, 121, 101, 23);
+		btnZasifrovat.setBounds(337, 177, 101, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(btnZasifrovat);
 		
 		/**
 		 * Button, který rozšifruje soubor
 		 */
 		JButton btnRozsifrovat = new JButton("Rozšifrovat");
-		btnRozsifrovat.setBounds(457, 121, 105, 23);
+		btnRozsifrovat.setBounds(457, 177, 105, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(btnRozsifrovat);
 		
-		Scrollbar scrollbar = new Scrollbar();
-		scrollbar.setBounds(545, 36, 17, 74);
-		frmXorsifrakolmanstokr.getContentPane().add(scrollbar);
-		
-		Scrollbar scrollbar_1 = new Scrollbar();
-		scrollbar_1.setBounds(545, 180, 17, 74);
-		frmXorsifrakolmanstokr.getContentPane().add(scrollbar_1);
+	
 	}
 }
