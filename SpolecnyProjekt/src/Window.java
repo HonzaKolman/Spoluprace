@@ -161,7 +161,7 @@ public class Window {
 		btnZasifrovat.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String  a = textArea.getText();
+				String a = textArea.getText();
 				String b = textArea_1.getText();
 				for(int i = 0; i < b.length(); i++) {
 					for(int x = 0; x < a.length(); x++) {
@@ -171,10 +171,11 @@ public class Window {
 		            int c = (a.charAt(0) ^ b.charAt(i));
 		            System.out.printf("result is <%s> [%s]\n",
 		                    (char) c, Integer.toBinaryString(c));
-				}
+					}
 			}
 				textArea_2.getText();
 			}
+			
 		});
 		
 	}
