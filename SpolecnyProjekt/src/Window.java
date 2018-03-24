@@ -1,7 +1,6 @@
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import java.awt.FlowLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
@@ -9,7 +8,6 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
-import javax.swing.JScrollBar;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -17,7 +15,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 import java.awt.event.ActionEvent;
-import java.awt.Scrollbar;
 
 public class Window {
 
