@@ -1,5 +1,5 @@
-import java.awt.EventQueue;
 
+import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -155,12 +155,13 @@ public class Window {
 		 * Button,který zašifruje soubor
 		 */
 		JButton btnZasifrovat = new JButton("Zašifrovat");
-		btnZasifrovat.setBounds(337, 177, 101, 23);
+		btnZasifrovat.setBounds(337, 177, 225, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(btnZasifrovat);
+
 		btnZasifrovat.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String  a = textArea.getText();
+				String a = textArea.getText();
 				String b = textArea_1.getText();
 				for(int i = 0; i < b.length(); i++) {
 					for(int x = 0; x < a.length(); x++) {
@@ -176,16 +177,8 @@ public class Window {
 		            	}
 		            }
 				}
-				textArea_2.getText();
+
 			}
 		});
-		
-		/**
-		 * Button, který rozšifruje soubor
-		 */
-		JButton btnRozsifrovat = new JButton("Rozšifrovat");
-		btnRozsifrovat.setBounds(457, 177, 105, 23);
-		frmXorsifrakolmanstokr.getContentPane().add(btnRozsifrovat);
-
 	}
 }
