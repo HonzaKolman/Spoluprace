@@ -16,6 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
+import java.awt.Scrollbar;
 
 public class Window {
 
@@ -71,11 +72,14 @@ public class Window {
 		 * Výpis ze souboru
 		 */
 		JTextArea textArea = new JTextArea();
-		textArea.setBorder(new LineBorder(new Color(0, 0, 0)));
-		textArea.setBounds(10, 36, 552, 74);
-		frmXorsifrakolmanstokr.getContentPane().add(textArea);
 		textArea.setEditable(false);
+<<<<<<< HEAD
 		textArea.setLineWrap(true);
+=======
+		textArea.setBorder(new LineBorder(new Color(0, 0, 0)));
+		textArea.setBounds(10, 36, 534, 74);
+		frmXorsifrakolmanstokr.getContentPane().add(textArea);
+>>>>>>> branch 'master' of https://github.com/HonzaKolman/Spoluprace.git
 		
 		/**
 		 * Button na naètení textu z vybraného souboru
@@ -128,7 +132,7 @@ public class Window {
 		 */
 		JTextArea textArea_2 = new JTextArea();
 		textArea_2.setBorder(new LineBorder(new Color(0, 0, 0)));
-		textArea_2.setBounds(10, 180, 552, 74);
+		textArea_2.setBounds(10, 180, 534, 74);
 		frmXorsifrakolmanstokr.getContentPane().add(textArea_2);
 		textArea_2.setEditable(false);
 		
@@ -145,5 +149,13 @@ public class Window {
 		JButton btnRozsifrovat = new JButton("Rozšifrovat");
 		btnRozsifrovat.setBounds(457, 121, 105, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(btnRozsifrovat);
+		
+		Scrollbar scrollbar = new Scrollbar();
+		scrollbar.setBounds(545, 36, 17, 74);
+		frmXorsifrakolmanstokr.getContentPane().add(scrollbar);
+		
+		Scrollbar scrollbar_1 = new Scrollbar();
+		scrollbar_1.setBounds(545, 180, 17, 74);
+		frmXorsifrakolmanstokr.getContentPane().add(scrollbar_1);
 	}
 }
