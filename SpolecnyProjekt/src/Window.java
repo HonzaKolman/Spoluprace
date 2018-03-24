@@ -157,6 +157,23 @@ public class Window {
 		JButton btnZasifrovat = new JButton("Zašifrovat");
 		btnZasifrovat.setBounds(337, 177, 101, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(btnZasifrovat);
+		btnZasifrovat.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String  a = textArea.getText();
+				String b = textArea_1.getText();
+				for(int i = 0; i < b.length(); i++) {
+					System.out.printf("xoring <%s> [%s] with <%s> [%s]\n",
+		                    a.charAt(0), Integer.toBinaryString(a.charAt(0)),
+		                    b.charAt(i), Integer.toBinaryString(b.charAt(i)));
+		            int c = (a.charAt(0) ^ b.charAt(i));
+		            System.out.printf("result is <%s> [%s]\n",
+		                    (char) c, Integer.toBinaryString(c));
+					
+				}
+				textArea_2.getText();
+			}
+		});
 		
 		/**
 		 * Button, který rozšifruje soubor
