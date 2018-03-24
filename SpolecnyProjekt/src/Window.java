@@ -128,7 +128,7 @@ public class Window {
 				String abeceda = "abcdefghijklmnopqrstuvwxyz123456789";
 				StringBuilder sb = new StringBuilder(10);
 				Random generator = new Random();
-				for(int i = 0; i <= 10; i++) {
+				for(int i = 0; i < 10; i++) {
 					sb.append(abeceda.charAt(generator.nextInt(abeceda.length())));
 					String klic = new String(sb);
 					textArea_1.setText(klic);
