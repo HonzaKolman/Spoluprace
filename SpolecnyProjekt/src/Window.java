@@ -75,6 +75,7 @@ public class Window {
 		textArea.setBounds(10, 36, 552, 74);
 		frmXorsifrakolmanstokr.getContentPane().add(textArea);
 		textArea.setEditable(false);
+		textArea.setLineWrap(true);
 		
 		/**
 		 * Button na naètení textu z vybraného souboru

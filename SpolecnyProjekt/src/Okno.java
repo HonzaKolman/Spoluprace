@@ -38,6 +38,7 @@ public class Okno extends JFrame{
 	private JPanel p3;
 	private JPanel p4;
 	private JPanel p5;
+	
 
 	public Okno() {
 		this.setTitle("XOR šifra");
@@ -77,6 +78,7 @@ public class Okno extends JFrame{
 		area = new JTextArea(15, 45);
 		p2.add(area);
 		area.setEditable(false);
+		area.setLineWrap(true);
 		area.setAutoscrolls(true);
 		p3= new JPanel(new FlowLayout());
 		labelKlic = new JLabel("Klíè:");
