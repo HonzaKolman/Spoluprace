@@ -6,6 +6,8 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
 
 public class Window {
 
@@ -40,7 +42,7 @@ public class Window {
 	 */
 	private void initialize() {
 		frmXorifrakolmantokr = new JFrame();
-		frmXorifrakolmantokr.setTitle("XOR \u0161ifra-Kolman, \u0160tokr");
+		frmXorifrakolmantokr.setTitle("XOR Šifra-Kolman, Štokr");
 		frmXorifrakolmantokr.setBounds(100, 100, 512, 326);
 		frmXorifrakolmantokr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmXorifrakolmantokr.getContentPane().setLayout(null);
@@ -52,9 +54,9 @@ public class Window {
 		/**
 		 * Button na naètení textu z vybraného souboru
 		 */
-		JButton btnNast = new JButton("Na\u010D\u00EDst");
-		btnNast.setBounds(397, 7, 89, 23);
-		frmXorifrakolmantokr.getContentPane().add(btnNast);
+		JButton btnNacist = new JButton("Naèíst");
+		btnNacist.setBounds(397, 7, 89, 23);
+		frmXorifrakolmantokr.getContentPane().add(btnNacist);
 		
 		/**
 		 * Area na napsání cesty k souboru
@@ -68,6 +70,7 @@ public class Window {
 		 * Výpis ze souboru
 		 */
 		JTextArea textArea = new JTextArea();
+		textArea.setBorder(new LineBorder(new Color(0, 0, 0)));
 		textArea.setBounds(10, 36, 476, 74);
 		frmXorifrakolmantokr.getContentPane().add(textArea);
 		textArea.setEditable(false);
@@ -75,23 +78,28 @@ public class Window {
 		/**
 		 * Button na vygenerování klíèe
 		 */
-		JButton btnKl = new JButton("Kl\u00ED\u010D");
-		btnKl.setBounds(10, 121, 82, 23);
-		frmXorifrakolmantokr.getContentPane().add(btnKl);
+		JButton btnKlic = new JButton("Klíè");
+		btnKlic.setBounds(10, 121, 82, 23);
+		frmXorifrakolmantokr.getContentPane().add(btnKlic);
 		
 		/**
 		 * Výpis klíèe
 		 */
 		JTextArea textArea_1 = new JTextArea();
-		textArea_1.setBounds(102, 125, 223, 14);
+		textArea_1.setBorder(new LineBorder(new Color(0, 0, 0)));
+		textArea_1.setBounds(102, 121, 225, 23);
 		frmXorifrakolmantokr.getContentPane().add(textArea_1);
 		textArea_1.setEditable(false);
 		
-		JLabel lblZaifrovanText = new JLabel("Za\u0161ifrovan\u00FD text:");
-		lblZaifrovanText.setBounds(10, 155, 105, 14);
-		frmXorifrakolmantokr.getContentPane().add(lblZaifrovanText);
+		JLabel lblZasifrovanyText = new JLabel("Zašifrovaný text:");
+		lblZasifrovanyText.setBounds(10, 155, 105, 14);
+		frmXorifrakolmantokr.getContentPane().add(lblZasifrovanyText);
 		
+		/**
+		 * Výpis zašifrovaného textu
+		 */
 		JTextArea textArea_2 = new JTextArea();
+		textArea_2.setBorder(new LineBorder(new Color(0, 0, 0)));
 		textArea_2.setBounds(10, 171, 476, 85);
 		frmXorifrakolmantokr.getContentPane().add(textArea_2);
 	}
