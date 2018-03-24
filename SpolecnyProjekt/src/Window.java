@@ -8,6 +8,9 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
+import javax.swing.JScrollBar;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Window {
 
@@ -43,7 +46,7 @@ public class Window {
 	private void initialize() {
 		frmXorsifrakolmanstokr = new JFrame();
 		frmXorsifrakolmanstokr.setTitle("XOR Šifra-Kolman, Štokr");
-		frmXorsifrakolmanstokr.setBounds(100, 100, 512, 326);
+		frmXorsifrakolmanstokr.setBounds(100, 100, 588, 308);
 		frmXorsifrakolmanstokr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmXorsifrakolmanstokr.getContentPane().setLayout(null);
 		
@@ -55,14 +58,14 @@ public class Window {
 		 * Button na naètení textu z vybraného souboru
 		 */
 		JButton btnNacist = new JButton("Naèíst");
-		btnNacist.setBounds(397, 7, 89, 23);
+		btnNacist.setBounds(473, 7, 89, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(btnNacist);
 		
 		/**
 		 * Area na napsání cesty k souboru
 		 */
 		textField = new JTextField();
-		textField.setBounds(125, 8, 262, 20);
+		textField.setBounds(125, 8, 305, 20);
 		frmXorsifrakolmanstokr.getContentPane().add(textField);
 		textField.setColumns(10);
 		
@@ -71,7 +74,7 @@ public class Window {
 		 */
 		JTextArea textArea = new JTextArea();
 		textArea.setBorder(new LineBorder(new Color(0, 0, 0)));
-		textArea.setBounds(10, 36, 476, 74);
+		textArea.setBounds(10, 36, 552, 74);
 		frmXorsifrakolmanstokr.getContentPane().add(textArea);
 		textArea.setEditable(false);
 		
@@ -100,7 +103,16 @@ public class Window {
 		 */
 		JTextArea textArea_2 = new JTextArea();
 		textArea_2.setBorder(new LineBorder(new Color(0, 0, 0)));
-		textArea_2.setBounds(10, 171, 476, 85);
+		textArea_2.setBounds(10, 180, 552, 74);
 		frmXorsifrakolmanstokr.getContentPane().add(textArea_2);
+		textArea_2.setEditable(false);
+		
+		JButton btnZaifrovat = new JButton("Za\u0161ifrovat");
+		btnZaifrovat.setBounds(337, 121, 89, 23);
+		frmXorsifrakolmanstokr.getContentPane().add(btnZaifrovat);
+		
+		JButton btnRozifrovat = new JButton("Roz\u0161ifrovat");
+		btnRozifrovat.setBounds(448, 121, 89, 23);
+		frmXorsifrakolmanstokr.getContentPane().add(btnRozifrovat);
 	}
 }
