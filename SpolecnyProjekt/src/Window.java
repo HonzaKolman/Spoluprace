@@ -108,11 +108,11 @@ public class Window {
 		textArea_2.setEditable(false);
 		
 		JButton btnZaifrovat = new JButton("Za\u0161ifrovat");
-		btnZaifrovat.setBounds(337, 121, 89, 23);
+		btnZaifrovat.setBounds(337, 121, 101, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(btnZaifrovat);
 		
 		JButton btnRozifrovat = new JButton("Roz\u0161ifrovat");
-		btnRozifrovat.setBounds(448, 121, 89, 23);
+		btnRozifrovat.setBounds(457, 121, 105, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(btnRozifrovat);
 	}
 }
