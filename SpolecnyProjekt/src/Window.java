@@ -53,6 +53,7 @@ public class Window {
 		frmXorsifrakolmanstokr.setBounds(100, 100, 588, 409);
 		frmXorsifrakolmanstokr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmXorsifrakolmanstokr.getContentPane().setLayout(null);
+		frmXorsifrakolmanstokr.setResizable(false);
 		
 		JLabel lblCestaKSouboru = new JLabel("Cesta k souboru:");
 		lblCestaKSouboru.setBounds(10, 11, 105, 14);
@@ -128,7 +129,7 @@ public class Window {
 				String abeceda = "abcdefghijklmnopqrstuvwxyz123456789";
 				StringBuilder sb = new StringBuilder(10);
 				Random generator = new Random();
-				for(int i = 0; i <= 10; i++) {
+				for(int i = 0; i < 10; i++) {
 					sb.append(abeceda.charAt(generator.nextInt(abeceda.length())));
 					String klic = new String(sb);
 					textArea_1.setText(klic);
