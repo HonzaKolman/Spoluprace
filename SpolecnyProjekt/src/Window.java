@@ -15,6 +15,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Random;
 import java.awt.event.ActionEvent;
 import java.awt.Scrollbar;
 
@@ -77,6 +78,15 @@ public class Window {
 		textArea.setBorder(new LineBorder(new Color(0, 0, 0)));
 		textArea.setBounds(10, 36, 534, 74);
 		frmXorsifrakolmanstokr.getContentPane().add(textArea);
+		
+		/**
+		 * Výpis klíèe
+		 */
+		JTextArea textArea_1 = new JTextArea();
+		textArea_1.setBorder(new LineBorder(new Color(0, 0, 0)));
+		textArea_1.setBounds(102, 121, 225, 23);
+		frmXorsifrakolmanstokr.getContentPane().add(textArea_1);
+		textArea_1.setEditable(false);
 
 		
 		/**
@@ -111,15 +121,20 @@ public class Window {
 		JButton btnKlic = new JButton("Klíè");
 		btnKlic.setBounds(10, 121, 82, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(btnKlic);
-		
-		/**
-		 * Výpis klíèe
-		 */
-		JTextArea textArea_1 = new JTextArea();
-		textArea_1.setBorder(new LineBorder(new Color(0, 0, 0)));
-		textArea_1.setBounds(102, 121, 225, 23);
-		frmXorsifrakolmanstokr.getContentPane().add(textArea_1);
-		textArea_1.setEditable(false);
+		btnKlic.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String abeceda = "abcdefghijklmnopqrstuvwxyz123456789";
+				StringBuilder sb = new StringBuilder(10);
+				Random generator = new Random();
+				for(int i = 0; i <= 10; i++) {
+					sb.append(abeceda.charAt(generator.nextInt(abeceda.length())));
+					String klic = new String(sb);
+					textArea_1.setText(klic);
+				}
+				textArea_1.getText();
+			}
+		});
 		
 		JLabel lblZasifrovanyText = new JLabel("Zašifrovaný text:");
 		lblZasifrovanyText.setBounds(10, 155, 105, 14);
