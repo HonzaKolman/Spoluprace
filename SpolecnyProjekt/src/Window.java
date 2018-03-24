@@ -151,7 +151,6 @@ public class Window {
 		JButton btnRozsifrovat = new JButton("Rozšifrovat");
 		btnRozsifrovat.setBounds(457, 177, 105, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(btnRozsifrovat);
-		
-	
+
 	}
 }
