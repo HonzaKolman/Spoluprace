@@ -53,6 +53,7 @@ public class Window {
 		frmXorsifrakolmanstokr.setBounds(100, 100, 588, 409);
 		frmXorsifrakolmanstokr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmXorsifrakolmanstokr.getContentPane().setLayout(null);
+		frmXorsifrakolmanstokr.setResizable(false);
 		
 		JLabel lblCestaKSouboru = new JLabel("Cesta k souboru:");
 		lblCestaKSouboru.setBounds(10, 11, 105, 14);
