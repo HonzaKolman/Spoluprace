@@ -85,7 +85,7 @@ public class Window {
 		 */
 		JTextArea textArea_1 = new JTextArea();
 		textArea_1.setBorder(new LineBorder(new Color(0, 0, 0)));
-		textArea_1.setBounds(102, 121, 225, 23);
+		textArea_1.setBounds(102, 177, 225, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(textArea_1);
 		textArea_1.setEditable(false);
 		
