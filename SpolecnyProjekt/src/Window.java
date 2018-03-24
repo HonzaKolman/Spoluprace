@@ -73,13 +73,11 @@ public class Window {
 		 */
 		JTextArea textArea = new JTextArea();
 		textArea.setEditable(false);
-<<<<<<< HEAD
 		textArea.setLineWrap(true);
-=======
 		textArea.setBorder(new LineBorder(new Color(0, 0, 0)));
 		textArea.setBounds(10, 36, 534, 74);
 		frmXorsifrakolmanstokr.getContentPane().add(textArea);
->>>>>>> branch 'master' of https://github.com/HonzaKolman/Spoluprace.git
+
 		
 		/**
 		 * Button na naètení textu z vybraného souboru
