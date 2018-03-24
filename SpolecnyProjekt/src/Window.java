@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.FlowLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
@@ -10,6 +11,10 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JScrollBar;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 
 public class Window {
@@ -55,13 +60,6 @@ public class Window {
 		frmXorsifrakolmanstokr.getContentPane().add(lblCestaKSouboru);
 		
 		/**
-		 * Button na naètení textu z vybraného souboru
-		 */
-		JButton btnNacist = new JButton("Naèíst");
-		btnNacist.setBounds(473, 7, 89, 23);
-		frmXorsifrakolmanstokr.getContentPane().add(btnNacist);
-		
-		/**
 		 * Area na napsání cesty k souboru
 		 */
 		textField = new JTextField();
@@ -77,6 +75,32 @@ public class Window {
 		textArea.setBounds(10, 36, 552, 74);
 		frmXorsifrakolmanstokr.getContentPane().add(textArea);
 		textArea.setEditable(false);
+		
+		/**
+		 * Button na naètení textu z vybraného souboru
+		 */
+		JButton btnNacist = new JButton("Naèíst");
+		btnNacist.setBounds(473, 7, 89, 23);
+		frmXorsifrakolmanstokr.getContentPane().add(btnNacist);
+		btnNacist.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String text = textField.getText();
+				try {
+					BufferedReader br = new BufferedReader(new FileReader(text));
+					String radek = "";
+						while((radek=br.readLine())!=null) {
+							textArea.setText(radek);
+						}	
+						br.close();
+						textArea.getText();
+				} catch (FileNotFoundException e1) {
+					JOptionPane error = new JOptionPane();
+					error.showMessageDialog(null, "Soubor nenalezen.", "Error", JOptionPane.ERROR_MESSAGE);
+				}catch (IOException e1) {
+				}
+			}
+		});
 		
 		/**
 		 * Button na vygenerování klíèe
