@@ -163,21 +163,19 @@ public class Window {
 			public void actionPerformed(ActionEvent e) {
 				String a = textArea.getText();
 				String b = textArea_1.getText();
-				for(int i = 0; i < b.length(); i++) {
-					for(int x = 0; x <= a.length(); x++) {
-					System.out.printf("xoring <%s> [%s] with <%s> [%s]\n",
-		                    a.charAt(x), Integer.toBinaryString(a.charAt(x)),
-		                    b.charAt(i), Integer.toBinaryString(b.charAt(i)));
-		            int c = (a.charAt(x) ^ b.charAt(i));
-		            System.out.printf("result is <%s> [%s]\n",
-		                    (char) c, Integer.toBinaryString(c));
-		            i++;
-		            if(i == 10) {
-		            	i = 0;
-		            	}
-		            }
+				for(int x = 0; x < a.length(); x++) {
+					for(int i = 0; i < b.length(); i++) {
+						System.out.printf("xoring <%s> [%s] with <%s> [%s]\n",
+			                    a.charAt(x), Integer.toBinaryString(a.charAt(x)),
+			                    b.charAt(i), Integer.toBinaryString(b.charAt(i)));
+			            int c = (a.charAt(x) ^ b.charAt(i));
+			            System.out.printf("result is <%s> [%s]\n",
+			                    (char) c, Integer.toBinaryString(c));
+			            x++;
+			            if(i == 10) i = 0;
+			            if(x == a.length()) break;
+			        }
 				}
-
 			}
 		});
 	}
