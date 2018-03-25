@@ -178,6 +178,7 @@ public class Window {
 			            int c = (a.charAt(x) ^ b.charAt(i));
 
 
+
 			            System.out.printf("result is <%s> [%s]\n",(char) c, Integer.toBinaryString(c));
 			            	textArea_2.setText(Integer.toBinaryString(c));
 
@@ -186,6 +187,7 @@ public class Window {
 			                    (char) c, Integer.toBinaryString(c));
 
 			            String slovo = Integer.toBinaryString(c);
+
 			            textArea_2.append(slovo);
 
 			            x++;
