@@ -171,11 +171,14 @@ public class Window {
 			            int c = (a.charAt(x) ^ b.charAt(i));
 			            System.out.printf("result is <%s> [%s]\n",
 			                    (char) c, Integer.toBinaryString(c));
+			            		textArea_2.setText(Integer.toBinaryString(c));
 			            x++;
 			            if(i == 15) i = 0;
 			            if(x == a.length()) break;
-		            }
+			            
+					}
 				}
+				textArea_2.getText();
 			}
 		
 		});
