@@ -94,6 +94,16 @@ public class Window {
 		textArea_1.setEditable(false);
 		
 		/**
+		 * Výpis zašifrovaného textu
+		 */
+		JTextArea textArea_2 = new JTextArea();
+		textArea_2.setBorder(new LineBorder(new Color(0, 0, 0)));
+		textArea_2.setBounds(10, 236, 552, 123);
+		frmXorsifrakolmanstokr.getContentPane().add(textArea_2);
+		textArea_2.setEditable(false);
+		textArea_2.setLineWrap(true);
+		
+		/**
 		 * Button na naètení textu z vybraného souboru
 		 */
 		JButton btnNacist = new JButton("Naèíst");
@@ -138,22 +148,13 @@ public class Window {
 					textArea_1.setText(klic);
 				}
 				textArea_1.getText();
+				textArea_2.setText(null);
 			}
 		});
 
 		JLabel lblZasifrovanyText = new JLabel("Zašifrovaný text:");
 		lblZasifrovanyText.setBounds(10, 211, 105, 14);
 		frmXorsifrakolmanstokr.getContentPane().add(lblZasifrovanyText);
-		
-		/**
-		 * Výpis zašifrovaného textu
-		 */
-		JTextArea textArea_2 = new JTextArea();
-		textArea_2.setBorder(new LineBorder(new Color(0, 0, 0)));
-		textArea_2.setBounds(10, 236, 552, 123);
-		frmXorsifrakolmanstokr.getContentPane().add(textArea_2);
-		textArea_2.setEditable(false);
-		textArea_2.setLineWrap(true);
 		
 		/**
 		 * Button,který zašifruje soubor
