@@ -107,6 +107,7 @@ public class Window {
 		 * Button na naètení textu z vybraného souboru
 		 */
 		JButton btnNacist = new JButton("Naèíst");
+		btnNacist.setToolTipText("Naète text z vybraného souboru");
 		btnNacist.setBounds(473, 7, 89, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(btnNacist);
 		btnNacist.addActionListener(new ActionListener(){
@@ -133,6 +134,7 @@ public class Window {
 		 * Button na vygenerování klíèe
 		 */
 		JButton btnKlic = new JButton("Klíè");
+		btnKlic.setToolTipText("Vygeneruje náhodný klíè k zašifrování");
 		btnKlic.setBounds(10, 177, 82, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(btnKlic);
 
@@ -160,6 +162,7 @@ public class Window {
 		 * Button,který zašifruje soubor
 		 */
 		JButton btnZasifrovat = new JButton("Zašifrovat");
+		btnZasifrovat.setToolTipText("Zašifruje vybraný text");
 		btnZasifrovat.setBounds(337, 177, 225, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(btnZasifrovat);
 		
