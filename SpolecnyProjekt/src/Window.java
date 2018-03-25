@@ -7,12 +7,17 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.border.LineBorder;
+import javax.swing.text.Caret;
+
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 import java.awt.event.ActionEvent;
 
@@ -156,29 +161,28 @@ public class Window {
 		JButton btnZasifrovat = new JButton("Zašifrovat");
 		btnZasifrovat.setBounds(337, 177, 225, 23);
 		frmXorsifrakolmanstokr.getContentPane().add(btnZasifrovat);
-
+		
 		btnZasifrovat.addActionListener(new ActionListener() {
 			@Override
-			
 			public void actionPerformed(ActionEvent e){
 				String a = textArea.getText();
 				String b = textArea_1.getText();
 				for(int x = 0; x < a.length(); x++) {
 					for(int i = 0; i < b.length(); i++) {
+						
 						System.out.printf("xoring <%s> [%s] with <%s> [%s]\n",
 			                    a.charAt(x), Integer.toBinaryString(a.charAt(x)),
 			                    b.charAt(i), Integer.toBinaryString(b.charAt(i)));
 			            int c = (a.charAt(x) ^ b.charAt(i));
-			            System.out.printf("result is <%s> [%s]\n",
-			                    (char) c, Integer.toBinaryString(c));
-			            		textArea_2.setText(Integer.toBinaryString(c));
+			            System.out.printf("result is <%s> [%s]\n",(char) c, Integer.toBinaryString(c));
+			            	textArea_2.setText(Integer.toBinaryString(c));
+
 			            x++;
 			            if(i == 15) i = 0;
 			            if(x == a.length()) break;
-			            
 					}
 				}
-				textArea_2.getText();
+				
 			}
 		
 		});
