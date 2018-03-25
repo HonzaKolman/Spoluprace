@@ -171,7 +171,7 @@ public class Window {
 					for(int i = 0; i < b.length(); i++) {
 			            int c = (a.charAt(x) ^ b.charAt(i));
 			            String slovo = Integer.toBinaryString(c);
-			            textArea_2.append(slovo);
+			            textArea_2.append(slovo+" ");
 			            x++;
 			            if(i == 15) i = 0;
 			            if(x == a.length()) break;
