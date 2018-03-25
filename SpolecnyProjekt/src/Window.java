@@ -149,6 +149,7 @@ public class Window {
 		frmXorsifrakolmanstokr.getContentPane().add(textArea_2);
 		textArea_2.setEditable(false);
 		
+		
 		/**
 		 * Button,který zašifruje soubor
 		 */
@@ -167,16 +168,18 @@ public class Window {
 						System.out.printf("xoring <%s> [%s] with <%s> [%s]\n",
 		                    a.charAt(x), Integer.toBinaryString(a.charAt(x)),
 		                    b.charAt(i), Integer.toBinaryString(b.charAt(i)));
-						int c = (a.charAt(0) ^ b.charAt(i));
+						int c = (a.charAt(x) ^ b.charAt(i));
 		            System.out.printf("result is <%s> [%s]\n",
 		                    (char) c, Integer.toBinaryString(c));
-		            	i++;
+		            	
+		            i++;
 		            	if(i == 10) {
 		            		i = 0;
 		            	}
 		            	
 		            }
 				}
+				
 
 			}
 		
