@@ -10,9 +10,12 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 import java.awt.event.ActionEvent;
 
@@ -148,7 +151,7 @@ public class Window {
 		textArea_2.setBounds(10, 236, 552, 123);
 		frmXorsifrakolmanstokr.getContentPane().add(textArea_2);
 		textArea_2.setEditable(false);
-		
+		textArea_2.setLineWrap(true);
 		
 		/**
 		 * Button,který zašifruje soubor
@@ -171,11 +174,11 @@ public class Window {
 			            int c = (a.charAt(x) ^ b.charAt(i));
 			            System.out.printf("result is <%s> [%s]\n",
 			                    (char) c, Integer.toBinaryString(c));
-			            		textArea_2.setText(Integer.toBinaryString(c));
+			            String slovo = Integer.toBinaryString(c)+", ";
+			            textArea_2.append(slovo);
 			            x++;
 			            if(i == 15) i = 0;
 			            if(x == a.length()) break;
-			            
 					}
 				}
 				textArea_2.getText();
