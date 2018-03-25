@@ -169,11 +169,14 @@ public class Window {
 				String b = textArea_1.getText();
 				for(int x = 0; x < a.length(); x++) {
 					for(int i = 0; i < b.length(); i++) {
+
 						
 						System.out.printf("xoring <%s> [%s] with <%s> [%s]\n",
 			                    a.charAt(x), Integer.toBinaryString(a.charAt(x)),
 			                    b.charAt(i), Integer.toBinaryString(b.charAt(i)));
+
 			            int c = (a.charAt(x) ^ b.charAt(i));
+
 
 			            System.out.printf("result is <%s> [%s]\n",(char) c, Integer.toBinaryString(c));
 			            	textArea_2.setText(Integer.toBinaryString(c));
@@ -181,7 +184,8 @@ public class Window {
 
 			            System.out.printf("result is <%s> [%s]\n",
 			                    (char) c, Integer.toBinaryString(c));
-			            String slovo = Integer.toBinaryString(c)+", ";
+
+			            String slovo = Integer.toBinaryString(c);
 			            textArea_2.append(slovo);
 
 			            x++;
